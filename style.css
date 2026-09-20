@@ -307,6 +307,7 @@ img{max-width:100%;display:block;}
 .pricing-grid{
   display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:2.5rem;
 }
+.pricing-grid[hidden]{display:none;}
 .pricing-card{
   background:var(--navy-900);
   border:1px solid rgba(212,175,55,0.2);
@@ -338,6 +339,7 @@ img{max-width:100%;display:block;}
   display:flex;align-items:center;justify-content:center;
   padding:1.5rem;z-index:100;
 }
+.modal-overlay[hidden]{display:none;}
 .modal-card{
   background:var(--navy-900);
   border:1px solid rgba(212,175,55,0.3);
