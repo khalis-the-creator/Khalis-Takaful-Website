@@ -7,13 +7,14 @@
 
    FIELDS:
    - title       : Campaign name shown on the card
-   - poster      : Path to the poster image (put the image file
-                   inside the "posters" folder, then reference it
-                   here, e.g. "posters/my-campaign.jpg"). If a
-                   poster hasn't been added yet, leave the path as
-                   is — the card will automatically show a clean
-                   text fallback with the title until a real image
-                   is added.
+   - poster      : Filename of the poster image. Just upload the
+                   image directly to the main repo folder (same
+                   place as index.html — no subfolder needed) and
+                   put its exact filename here, e.g. "heat-stroke-cover.jpg".
+                   If a poster hasn't been uploaded yet, leave the
+                   filename as is — the card will automatically
+                   show a clean text fallback with the title until
+                   a real image with that exact name is added.
    - link        : The exact AIA campaign page URL
    - tag         : Short category label, e.g. "Percuma", "Edukasi"
    - validUntil  : Optional. Format: "YYYY-MM-DD" (e.g. "2026-09-30")
@@ -29,35 +30,35 @@
 const CAMPAIGNS = [
   {
     title: "Free AIA Heat Stroke Cover",
-    poster: "posters/heat-stroke-cover.jpg",
+    poster: "heat-stroke-cover.jpg",
     link: "https://discover.aia.com.my/rsc/5I5b3xbY",
     tag: "Percuma",
     validUntil: null
   },
   {
     title: "Free AIA Dengue Cover",
-    poster: "posters/dengue-cover.jpg",
+    poster: "dengue-cover.jpg",
     link: "https://discover.aia.com.my/rsc/zSTlA0C3",
     tag: "Percuma",
     validUntil: null
   },
   {
     title: "AIA Vitality: How to Redeem Your Weekly Challenge Reward",
-    poster: "posters/vitality-weekly-reward.jpg",
+    poster: "vitality-weekly-reward.jpg",
     link: "https://discover.aia.com.my/rsc/DKnmoD70",
     tag: "AIA Vitality",
     validUntil: null
   },
   {
     title: "AIA Free Khairat Kematian Cover",
-    poster: "posters/khairat-kematian-cover.jpg",
+    poster: "khairat-kematian-cover.jpg",
     link: "https://discover.aia.com.my/rsc/3UM4OEpa",
     tag: "Percuma",
     validUntil: null
   },
   {
     title: "Golongan Yang Perlu Takaful",
-    poster: "posters/golongan-perlu-takaful.jpg",
+    poster: "golongan-perlu-takaful.jpg",
     link: "https://discover.aia.com.my/rsc/SAqJdigh",
     tag: "Edukasi",
     validUntil: null
