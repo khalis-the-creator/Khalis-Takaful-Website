@@ -166,6 +166,20 @@ const pricingGrid = document.getElementById('pricingGrid');
 const ageWarning = document.getElementById('ageWarning');
 const quoteDisclaimer = document.getElementById('quoteDisclaimer');
 
+function buildPlanMessage(planKey) {
+  const info = PLAN_INFO[planKey];
+  const premium = lastQuote.premiums[planKey];
+  const genderLabel = lastQuote.gender === 'male' ? 'Lelaki' : 'Perempuan';
+  return (
+    `Hai Khalis, saya berminat dengan pelan ${info.label} (A-Life Sejuta Makna).\n\n` +
+    `Nama: ${lastQuote.name}\n` +
+    `Umur: ${lastQuote.age}\n` +
+    `Jantina: ${genderLabel}\n` +
+    `Anggaran premium: RM${premium.toFixed(2)} / bulan\n\n` +
+    `Boleh kita bincang langkah seterusnya?`
+  );
+}
+
 quoteForm.addEventListener('submit', (e) => {
   e.preventDefault();
 
@@ -193,6 +207,12 @@ quoteForm.addEventListener('submit', (e) => {
   document.getElementById('premPremium').textContent = 'RM' + premiums.premium.toFixed(2);
 
   lastQuote = { name, age, gender, premiums };
+
+  // set each card's direct WhatsApp button now that we have a quote
+  document.querySelectorAll('.plan-wa-btn').forEach(btn => {
+    const planKey = btn.dataset.plan;
+    btn.href = buildWhatsappLink(buildPlanMessage(planKey));
+  });
 
   pricingGrid.hidden = false;
   quoteDisclaimer.hidden = false;
@@ -222,16 +242,7 @@ document.querySelectorAll('.plan-detail-btn').forEach(btn => {
       featuresList.appendChild(li);
     });
 
-    const genderLabel = lastQuote.gender === 'male' ? 'Lelaki' : 'Perempuan';
-    const message =
-      `Hai Khalis, saya berminat dengan pelan ${info.label} (A-Life Sejuta Makna).\n\n` +
-      `Nama: ${lastQuote.name}\n` +
-      `Umur: ${lastQuote.age}\n` +
-      `Jantina: ${genderLabel}\n` +
-      `Anggaran premium: RM${premium.toFixed(2)} / bulan\n\n` +
-      `Boleh kita bincang langkah seterusnya?`;
-
-    document.getElementById('modalWhatsapp').href = buildWhatsappLink(message);
+    document.getElementById('modalWhatsapp').href = buildWhatsappLink(buildPlanMessage(planKey));
 
     planModal.hidden = false;
   });
