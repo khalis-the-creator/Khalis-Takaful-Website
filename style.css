@@ -330,6 +330,7 @@ img{max-width:100%;display:block;}
   font-family:var(--font-mono);font-size:1.6rem;font-weight:600;color:var(--gold-light);
 }
 .premium-unit{font-size:.85rem;color:var(--muted);}
+.plan-detail-btn{margin-bottom:.7rem;}
 
 /* =============================================================
    MODAL
