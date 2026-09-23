@@ -331,7 +331,6 @@ img{max-width:100%;display:block;}
   font-family:var(--font-mono);font-size:1.6rem;font-weight:600;color:var(--gold-light);
 }
 .premium-unit{font-size:.85rem;color:var(--muted);}
-.plan-detail-btn{margin-bottom:.7rem;}
 
 /* =============================================================
    PLAN BADGE — small distinguishing label + icon per quote tool
@@ -351,32 +350,6 @@ img{max-width:100%;display:block;}
 }
 
 .kritikal-tool{margin-top:4.5rem;}
-
-/* =============================================================
-   MODAL
-============================================================= */
-.modal-overlay{
-  position:fixed;inset:0;background:rgba(5,11,22,0.7);
-  display:flex;align-items:center;justify-content:center;
-  padding:1.5rem;z-index:100;
-}
-.modal-overlay[hidden]{display:none;}
-.modal-card{
-  background:var(--navy-900);
-  border:1px solid rgba(212,175,55,0.3);
-  border-radius:var(--radius);
-  padding:2.2rem;max-width:420px;width:100%;
-  position:relative;color:var(--paper);
-  box-shadow:var(--shadow-lg);
-}
-.modal-close{
-  position:absolute;top:1rem;right:1rem;
-  background:none;border:none;color:var(--muted);
-  font-size:1.4rem;cursor:pointer;line-height:1;
-}
-.modal-features{margin:1.2rem 0;display:grid;gap:.5rem;}
-.modal-features li{font-size:.88rem;color:var(--muted);padding-left:1.2em;position:relative;}
-.modal-features li::before{content:"✓";position:absolute;left:0;color:var(--gold);}
 
 /* =============================================================
    ABOUT
