@@ -127,36 +127,9 @@ const RATES = {
 };
 
 const PLAN_INFO = {
-  basic: {
-    amount: 350000,
-    label: 'RM350,000 Hibah',
-    features: [
-      'Perlindungan hayat & hibah RM350,000',
-      'Manfaat kematian & keilatan kekal',
-      'Pilihan tambah rider penyakit kritikal',
-      'Premium tetap sepanjang tempoh polisi'
-    ]
-  },
-  standard: {
-    amount: 500000,
-    label: 'RM500,000 Hibah',
-    features: [
-      'Perlindungan hayat & hibah RM500,000',
-      'Manfaat kematian & keilatan kekal',
-      'Cover Reset & Loyalty Bonus layak',
-      'Pilihan tambah rider penyakit kritikal & perubatan'
-    ]
-  },
-  premium: {
-    amount: 1000000,
-    label: 'RM1,000,000 Hibah',
-    features: [
-      'Perlindungan hayat & hibah RM1,000,000',
-      'Floor Amount & Floor Rate Lock disertakan',
-      'Bequest Option untuk perancangan faraid/wasiat',
-      'Susunan premium disesuaikan untuk HNWI'
-    ]
-  }
+  basic: { label: 'RM350,000 Hibah' },
+  standard: { label: 'RM500,000 Hibah' },
+  premium: { label: 'RM1,000,000 Hibah' }
 };
 
 let lastQuote = null; // stores {name, age, gender, premiums}
@@ -217,41 +190,4 @@ quoteForm.addEventListener('submit', (e) => {
   pricingGrid.hidden = false;
   quoteDisclaimer.hidden = false;
   pricingGrid.scrollIntoView({ behavior: 'smooth', block: 'start' });
-});
-
-/* --- Modal --- */
-const planModal = document.getElementById('planModal');
-const modalClose = document.getElementById('modalClose');
-
-document.querySelectorAll('.plan-detail-btn').forEach(btn => {
-  btn.addEventListener('click', () => {
-    if (!lastQuote) return;
-    const planKey = btn.dataset.plan;
-    const info = PLAN_INFO[planKey];
-    const premium = lastQuote.premiums[planKey];
-
-    document.getElementById('modalTag').textContent = planKey.charAt(0).toUpperCase() + planKey.slice(1);
-    document.getElementById('modalTitle').textContent = info.label;
-    document.getElementById('modalPremium').textContent = 'RM' + premium.toFixed(2);
-
-    const featuresList = document.getElementById('modalFeatures');
-    featuresList.innerHTML = '';
-    info.features.forEach(f => {
-      const li = document.createElement('li');
-      li.textContent = f;
-      featuresList.appendChild(li);
-    });
-
-    document.getElementById('modalWhatsapp').href = buildWhatsappLink(buildPlanMessage(planKey));
-
-    planModal.hidden = false;
-  });
-});
-
-modalClose.addEventListener('click', () => { planModal.hidden = true; });
-planModal.addEventListener('click', (e) => {
-  if (e.target === planModal) planModal.hidden = true;
-});
-document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape' && !planModal.hidden) planModal.hidden = true;
 });
