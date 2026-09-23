@@ -212,7 +212,91 @@
     </div>
   </div>
   <p class="disclaimer" id="quoteDisclaimer" hidden>Anggaran premium ini adalah untuk tujuan indikatif sahaja dan tertakluk kepada penilaian bawah tulis (underwriting) rasmi oleh AIA PUBLIC Takaful Bhd.</p>
+
+  <!-- ============ KRITIKAL PROTECTOR TOOL ============ -->
+  <div class="kritikal-tool">
+    <div class="kritikal-banner">
+      <svg class="kritikal-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M24 42s-15-8.8-19.5-19C1.5 16.5 4 9 11.5 7.5c4.3-.9 8 1.3 10 4.3 2-3 5.7-5.2 10-4.3C39 9 41.5 16.5 38.5 23 34 33.2 24 42 24 42z" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/>
+        <path d="M7 24h6l3-8 4 16 3-11 2.5 3h9.5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <div>
+        <span class="kritikal-banner-tag">A-Life Kritikal Protector</span>
+        <p class="kritikal-banner-sub">Anggaran premium bulanan pampasan sakit kritikal mampu milik berdasarkan umur dan jantina.</p>
+      </div>
+    </div>
+
+    <div class="coverage-ladder" aria-hidden="true">
+      <div class="ladder-step">
+        <div class="ladder-bar" style="height:40px;"></div>
+        <span class="ladder-label">Basic<br><span class="ladder-mult">×1</span></span>
+      </div>
+      <div class="ladder-step">
+        <div class="ladder-bar" style="height:80px;"></div>
+        <span class="ladder-label">Standard<br><span class="ladder-mult">×2</span></span>
+      </div>
+      <div class="ladder-step">
+        <div class="ladder-bar" style="height:160px;"></div>
+        <span class="ladder-label">Premium<br><span class="ladder-mult">×4</span></span>
+      </div>
+    </div>
+
+    <form id="kritikalForm" class="tool-form quote-form kritikal-form">
+      <label>Nama
+        <input type="text" id="k-name" placeholder="Nama anda" required>
+      </label>
+      <label>Umur
+        <input type="number" id="k-age" min="25" max="60" placeholder="25–60" required>
+      </label>
+      <label>Jantina
+        <select id="k-gender" required>
+          <option value="">Pilih</option>
+          <option value="male">Lelaki</option>
+          <option value="female">Perempuan</option>
+        </select>
+      </label>
+      <button type="submit" class="btn btn-copper btn-full">Jana Sebut Harga</button>
+    </form>
+    <p class="age-warning" id="kritikalAgeWarning" hidden>Sila masukkan umur di antara 25 hingga 60 tahun.</p>
+
+    <div class="pricing-grid kritikal-grid" id="kritikalPricingGrid" hidden>
+      <div class="pricing-card kritikal-card" data-plan="basic">
+        <span class="plan-tag kritikal-plan-tag">Basic</span>
+        <h3 id="kritikalTitleBasic"></h3>
+        <p class="premium"><span class="premium-figure kritikal-figure" id="kritikalPremBasic"></span> <span class="premium-unit">/ bulan</span></p>
+        <button type="button" class="btn btn-outline btn-full kritikal-detail-btn" data-plan="basic">Lihat Details Breakdown</button>
+        <a href="#" class="btn btn-copper btn-full kritikal-wa-btn" data-plan="basic" target="_blank" rel="noopener">Pilih Pakej Ini · WhatsApp</a>
+      </div>
+      <div class="pricing-card kritikal-card featured-copper" data-plan="standard">
+        <span class="plan-tag kritikal-plan-tag">Standard</span>
+        <h3 id="kritikalTitleStandard"></h3>
+        <p class="premium"><span class="premium-figure kritikal-figure" id="kritikalPremStandard"></span> <span class="premium-unit">/ bulan</span></p>
+        <button type="button" class="btn btn-outline btn-full kritikal-detail-btn" data-plan="standard">Lihat Details Breakdown</button>
+        <a href="#" class="btn btn-copper btn-full kritikal-wa-btn" data-plan="standard" target="_blank" rel="noopener">Pilih Pakej Ini · WhatsApp</a>
+      </div>
+      <div class="pricing-card kritikal-card" data-plan="premium">
+        <span class="plan-tag kritikal-plan-tag">Premium</span>
+        <h3 id="kritikalTitlePremium"></h3>
+        <p class="premium"><span class="premium-figure kritikal-figure" id="kritikalPremPremium"></span> <span class="premium-unit">/ bulan</span></p>
+        <button type="button" class="btn btn-outline btn-full kritikal-detail-btn" data-plan="premium">Lihat Details Breakdown</button>
+        <a href="#" class="btn btn-copper btn-full kritikal-wa-btn" data-plan="premium" target="_blank" rel="noopener">Pilih Pakej Ini · WhatsApp</a>
+      </div>
+    </div>
+    <p class="disclaimer" id="kritikalDisclaimer" hidden>Anggaran premium ini adalah untuk tujuan indikatif sahaja (kadar bukan perokok) dan tertakluk kepada penilaian bawah tulis (underwriting) rasmi oleh AIA PUBLIC Takaful Bhd.</p>
+  </div>
 </section>
+
+<!-- Kritikal Protector Modal -->
+<div class="modal-overlay" id="kritikalModal" hidden>
+  <div class="modal-card kritikal-modal-card">
+    <button class="modal-close" id="kritikalModalClose" aria-label="Tutup">&times;</button>
+    <span class="plan-tag kritikal-plan-tag" id="kritikalModalTag"></span>
+    <h3 id="kritikalModalTitle"></h3>
+    <p class="premium"><span id="kritikalModalPremium"></span> <span class="premium-unit">/ bulan</span></p>
+    <ul class="modal-features" id="kritikalModalFeatures"></ul>
+    <a href="#" id="kritikalModalWhatsapp" target="_blank" rel="noopener" class="btn btn-copper btn-full">Teruskan Melalui WhatsApp</a>
+  </div>
+</div>
 
 <!-- Modal -->
 <div class="modal-overlay" id="planModal" hidden>
@@ -225,6 +309,7 @@
     <a href="#" id="modalWhatsapp" target="_blank" rel="noopener" class="btn btn-gold btn-full">Teruskan Melalui WhatsApp</a>
   </div>
 </div>
+
 
 <!-- ============ ABOUT ============ -->
 <section class="about" id="about">
@@ -291,5 +376,6 @@
 <script src="videos.js"></script>
 <script src="videos-render.js"></script>
 <script src="script.js"></script>
+<script src="kritikal-quote.js"></script>
 </body>
 </html>
