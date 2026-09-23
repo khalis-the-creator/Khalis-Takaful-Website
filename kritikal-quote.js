@@ -98,33 +98,6 @@ const KRITIKAL_RATES = {
   ]
 };
 
-const KRITIKAL_PLAN_INFO = {
-  basic: {
-    multiplier: 1,
-    features: [
-      "Pampasan tunai sekaligus apabila didiagnosis sakit kritikal",
-      "Perlindungan asas mengikut had minimum penyertaan",
-      "Sesuai untuk permulaan perlindungan tanpa komitmen tinggi"
-    ]
-  },
-  standard: {
-    multiplier: 2,
-    features: [
-      "2× ganda jumlah pampasan berbanding pelan Basic",
-      "Perlindungan lebih menyeluruh untuk keluarga muda",
-      "Keseimbangan baik antara perlindungan dan premium"
-    ]
-  },
-  premium: {
-    multiplier: 4,
-    features: [
-      "4× ganda jumlah pampasan berbanding pelan Basic",
-      "Perlindungan maksimum untuk ketenangan fikiran",
-      "Disyorkan untuk ketua keluarga & profesional"
-    ]
-  }
-};
-
 let lastKritikalQuote = null; // {name, age, gender, plans: {basic, standard, premium}}
 
 const kritikalForm = document.getElementById('kritikalForm');
@@ -193,41 +166,4 @@ kritikalForm.addEventListener('submit', (e) => {
   kritikalPricingGrid.hidden = false;
   kritikalDisclaimer.hidden = false;
   kritikalPricingGrid.scrollIntoView({ behavior: 'smooth', block: 'start' });
-});
-
-/* --- Modal --- */
-const kritikalModal = document.getElementById('kritikalModal');
-const kritikalModalClose = document.getElementById('kritikalModalClose');
-
-document.querySelectorAll('.kritikal-detail-btn').forEach(btn => {
-  btn.addEventListener('click', () => {
-    if (!lastKritikalQuote) return;
-    const planKey = btn.dataset.plan;
-    const info = KRITIKAL_PLAN_INFO[planKey];
-    const plan = lastKritikalQuote.plans[planKey];
-
-    document.getElementById('kritikalModalTag').textContent = planKey.charAt(0).toUpperCase() + planKey.slice(1);
-    document.getElementById('kritikalModalTitle').textContent = 'RM' + fmtRM(plan.coverage) + ' Perlindungan';
-    document.getElementById('kritikalModalPremium').textContent = 'RM' + plan.premium.toFixed(2);
-
-    const featuresList = document.getElementById('kritikalModalFeatures');
-    featuresList.innerHTML = '';
-    info.features.forEach(f => {
-      const li = document.createElement('li');
-      li.textContent = f;
-      featuresList.appendChild(li);
-    });
-
-    document.getElementById('kritikalModalWhatsapp').href = buildWhatsappLink(buildKritikalPlanMessage(planKey));
-
-    kritikalModal.hidden = false;
-  });
-});
-
-kritikalModalClose.addEventListener('click', () => { kritikalModal.hidden = true; });
-kritikalModal.addEventListener('click', (e) => {
-  if (e.target === kritikalModal) kritikalModal.hidden = true;
-});
-document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape' && !kritikalModal.hidden) kritikalModal.hidden = true;
 });
