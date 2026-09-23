@@ -167,7 +167,13 @@
   <div class="section-head">
     <span class="eyebrow">Alat #2</span>
     <h2>Anggaran Sebut Harga Pantas</h2>
-    <p class="section-sub">A-Life Sejuta Makna — anggaran premium bulanan hibah takaful mampu milik berdasarkan umur dan jantina.</p>
+    <div class="plan-badge-row">
+      <svg class="plan-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M12 2l8 3v6c0 5-3.5 8.5-8 11-4.5-2.5-8-6-8-11V5l8-3z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+      </svg>
+      <span class="plan-badge">A-Life Sejuta Makna</span>
+    </div>
+    <p class="section-sub">Anggaran premium bulanan <strong>hibah takaful</strong> mampu milik berdasarkan umur dan jantina.</p>
   </div>
 
   <form id="quoteForm" class="tool-form quote-form">
@@ -215,33 +221,20 @@
 
   <!-- ============ KRITIKAL PROTECTOR TOOL ============ -->
   <div class="kritikal-tool">
-    <div class="kritikal-banner">
-      <svg class="kritikal-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <path d="M24 42s-15-8.8-19.5-19C1.5 16.5 4 9 11.5 7.5c4.3-.9 8 1.3 10 4.3 2-3 5.7-5.2 10-4.3C39 9 41.5 16.5 38.5 23 34 33.2 24 42 24 42z" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/>
-        <path d="M7 24h6l3-8 4 16 3-11 2.5 3h9.5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-      <div>
-        <span class="kritikal-banner-tag">A-Life Kritikal Protector</span>
-        <p class="kritikal-banner-sub">Anggaran premium bulanan pampasan sakit kritikal mampu milik berdasarkan umur dan jantina.</p>
+    <div class="section-head">
+      <span class="eyebrow">Alat #3</span>
+      <h2>Anggaran Sebut Harga Pantas</h2>
+      <div class="plan-badge-row">
+        <svg class="plan-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M12 21s-7-4.4-9.5-9.3C1 8.5 2.2 4.8 5.8 4.1c2.1-.4 4 .6 5 2.1 1-1.5 2.9-2.5 5-2.1 3.6.7 4.8 4.4 3.3 7.6C19 16.6 12 21 12 21z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+          <path d="M3.5 12h3l1.5-4 2 8 1.5-5.5 1.3 1.5h5.2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span class="plan-badge">A-Life Kritikal Protector</span>
       </div>
+      <p class="section-sub">Anggaran premium bulanan <strong>pampasan sakit kritikal</strong> mampu milik berdasarkan umur dan jantina.</p>
     </div>
 
-    <div class="coverage-ladder" aria-hidden="true">
-      <div class="ladder-step">
-        <div class="ladder-bar" style="height:40px;"></div>
-        <span class="ladder-label">Basic<br><span class="ladder-mult">×1</span></span>
-      </div>
-      <div class="ladder-step">
-        <div class="ladder-bar" style="height:80px;"></div>
-        <span class="ladder-label">Standard<br><span class="ladder-mult">×2</span></span>
-      </div>
-      <div class="ladder-step">
-        <div class="ladder-bar" style="height:160px;"></div>
-        <span class="ladder-label">Premium<br><span class="ladder-mult">×4</span></span>
-      </div>
-    </div>
-
-    <form id="kritikalForm" class="tool-form quote-form kritikal-form">
+    <form id="kritikalForm" class="tool-form quote-form">
       <label>Nama
         <input type="text" id="k-name" placeholder="Nama anda" required>
       </label>
@@ -255,31 +248,31 @@
           <option value="female">Perempuan</option>
         </select>
       </label>
-      <button type="submit" class="btn btn-copper btn-full">Jana Sebut Harga</button>
+      <button type="submit" class="btn btn-gold btn-full">Jana Sebut Harga</button>
     </form>
     <p class="age-warning" id="kritikalAgeWarning" hidden>Sila masukkan umur di antara 25 hingga 60 tahun.</p>
 
-    <div class="pricing-grid kritikal-grid" id="kritikalPricingGrid" hidden>
-      <div class="pricing-card kritikal-card" data-plan="basic">
-        <span class="plan-tag kritikal-plan-tag">Basic</span>
+    <div class="pricing-grid" id="kritikalPricingGrid" hidden>
+      <div class="pricing-card" data-plan="basic">
+        <span class="plan-tag">Basic</span>
         <h3 id="kritikalTitleBasic"></h3>
-        <p class="premium"><span class="premium-figure kritikal-figure" id="kritikalPremBasic"></span> <span class="premium-unit">/ bulan</span></p>
+        <p class="premium"><span class="premium-figure" id="kritikalPremBasic"></span> <span class="premium-unit">/ bulan</span></p>
         <button type="button" class="btn btn-outline btn-full kritikal-detail-btn" data-plan="basic">Lihat Details Breakdown</button>
-        <a href="#" class="btn btn-copper btn-full kritikal-wa-btn" data-plan="basic" target="_blank" rel="noopener">Pilih Pakej Ini · WhatsApp</a>
+        <a href="#" class="btn btn-gold btn-full kritikal-wa-btn" data-plan="basic" target="_blank" rel="noopener">Pilih Pakej Ini · WhatsApp</a>
       </div>
-      <div class="pricing-card kritikal-card featured-copper" data-plan="standard">
-        <span class="plan-tag kritikal-plan-tag">Standard</span>
+      <div class="pricing-card featured" data-plan="standard">
+        <span class="plan-tag">Standard</span>
         <h3 id="kritikalTitleStandard"></h3>
-        <p class="premium"><span class="premium-figure kritikal-figure" id="kritikalPremStandard"></span> <span class="premium-unit">/ bulan</span></p>
+        <p class="premium"><span class="premium-figure" id="kritikalPremStandard"></span> <span class="premium-unit">/ bulan</span></p>
         <button type="button" class="btn btn-outline btn-full kritikal-detail-btn" data-plan="standard">Lihat Details Breakdown</button>
-        <a href="#" class="btn btn-copper btn-full kritikal-wa-btn" data-plan="standard" target="_blank" rel="noopener">Pilih Pakej Ini · WhatsApp</a>
+        <a href="#" class="btn btn-gold btn-full kritikal-wa-btn" data-plan="standard" target="_blank" rel="noopener">Pilih Pakej Ini · WhatsApp</a>
       </div>
-      <div class="pricing-card kritikal-card" data-plan="premium">
-        <span class="plan-tag kritikal-plan-tag">Premium</span>
+      <div class="pricing-card" data-plan="premium">
+        <span class="plan-tag">Premium</span>
         <h3 id="kritikalTitlePremium"></h3>
-        <p class="premium"><span class="premium-figure kritikal-figure" id="kritikalPremPremium"></span> <span class="premium-unit">/ bulan</span></p>
+        <p class="premium"><span class="premium-figure" id="kritikalPremPremium"></span> <span class="premium-unit">/ bulan</span></p>
         <button type="button" class="btn btn-outline btn-full kritikal-detail-btn" data-plan="premium">Lihat Details Breakdown</button>
-        <a href="#" class="btn btn-copper btn-full kritikal-wa-btn" data-plan="premium" target="_blank" rel="noopener">Pilih Pakej Ini · WhatsApp</a>
+        <a href="#" class="btn btn-gold btn-full kritikal-wa-btn" data-plan="premium" target="_blank" rel="noopener">Pilih Pakej Ini · WhatsApp</a>
       </div>
     </div>
     <p class="disclaimer" id="kritikalDisclaimer" hidden>Anggaran premium ini adalah untuk tujuan indikatif sahaja (kadar bukan perokok) dan tertakluk kepada penilaian bawah tulis (underwriting) rasmi oleh AIA PUBLIC Takaful Bhd.</p>
@@ -288,13 +281,13 @@
 
 <!-- Kritikal Protector Modal -->
 <div class="modal-overlay" id="kritikalModal" hidden>
-  <div class="modal-card kritikal-modal-card">
+  <div class="modal-card">
     <button class="modal-close" id="kritikalModalClose" aria-label="Tutup">&times;</button>
-    <span class="plan-tag kritikal-plan-tag" id="kritikalModalTag"></span>
+    <span class="plan-tag" id="kritikalModalTag"></span>
     <h3 id="kritikalModalTitle"></h3>
     <p class="premium"><span id="kritikalModalPremium"></span> <span class="premium-unit">/ bulan</span></p>
     <ul class="modal-features" id="kritikalModalFeatures"></ul>
-    <a href="#" id="kritikalModalWhatsapp" target="_blank" rel="noopener" class="btn btn-copper btn-full">Teruskan Melalui WhatsApp</a>
+    <a href="#" id="kritikalModalWhatsapp" target="_blank" rel="noopener" class="btn btn-gold btn-full">Teruskan Melalui WhatsApp</a>
   </div>
 </div>
 
