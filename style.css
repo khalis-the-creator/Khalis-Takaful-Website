@@ -95,7 +95,7 @@ img{max-width:100%;display:block;}
 .btn-outline{
   background:transparent;
   border-color:var(--gold-dim);
-  color:var(--navy-900);
+  color:var(--paper);
 }
 .btn-outline:hover{border-color:var(--gold);background:rgba(212,175,55,0.06);}
 .btn-small{padding:.55em 1.3em;font-size:.85rem;}
